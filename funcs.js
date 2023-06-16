@@ -38,10 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function isDayAvailable(year, month, day) {
-        // Your logic to determine availability goes here
-        // Return true if the day is available, false otherwise
-        // You can use any conditions or data source to determine availability
-        // This is just a placeholder example
+
         return Math.random() < 0.25;
       }
 
