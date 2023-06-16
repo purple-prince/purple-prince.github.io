@@ -30,16 +30,31 @@ document.addEventListener('DOMContentLoaded', function() {
           } else {
             dayElem.classList.add('unavailable');
           }
-    
+
           daysContainer.appendChild(dayElem)
       }
     }
 
+    
+
 
 
     function isDayAvailable(year, month, day) {
+        const unavailableRanges = [
+            [new Date(2023, 5, 14), new Date(2023, 6, 31)], // June 14th - July 31st, 2023
+            [new Date(2023, 11, 4), new Date(2024, 2, 31)] // Dec 4th, 2023 - March 31st, 2024
+          ];
 
-        return Math.random() < 0.25;
+          const currentDate = new Date(year, month, day);
+
+          // Check if the current date falls within any of the unavailable ranges
+          for (const [startDate, endDate] of unavailableRanges) {
+              if (currentDate >= startDate && currentDate <= endDate) {
+                return false; // Date is unavailable
+              }
+          }
+
+        return true; // Date is available
       }
 
 
