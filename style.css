@@ -46,14 +46,21 @@ html, body {
     border: 1px solid #ccc;
     padding: 5px;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px rgba(230, 230, 230, 1);
+    transition: transform 0.25s ease-in-out;
   }
+  
+  .day:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
 
   .unavailable {
-    background-color: rgba(0, 0, 40, 0.05);
+    background-color: rgb(236, 222, 226);
   }
 
   .available {
-    background-color: rgb(0, 200, 100, 0.25);
+    background-color: rgb(206, 232, 215)
   }
   
