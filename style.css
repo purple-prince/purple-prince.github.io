@@ -28,7 +28,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 48px;
+    font-size: 32px;
   }
   
   .days {
@@ -41,12 +41,17 @@ html, body {
   
   .day {
     text-align: right;
-    background-color: #fffafa;
+    background-color: rgb(206, 232, 215);
     border: 1px solid #ccc;
     padding: 5px;
     border-radius: 4px;
     box-shadow: 2px 2px 4px rgba(230, 230, 230, 1);
     transition: transform 0.25s ease-in-out;
+    position: relative;
+  }
+
+  .day-number {
+    text-align: right;
   }
   
   .day:hover {
@@ -60,6 +65,15 @@ html, body {
   }
 
   .available {
-    background-color: rgb(206, 232, 215)
+    background-color: rgb(206, 232, 215);
+  }
+
+  .unavailable-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(255, 116, 116);
   }
   
