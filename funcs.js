@@ -21,17 +21,22 @@ document.addEventListener('DOMContentLoaded', function() {
       for (let i = 1; i <= lastDay.getDate(); i++) {
         const dayElem = document.createElement('div');
         dayElem.classList.add('day');
-        dayElem.textContent = i;
-        // daysContainer.appendChild(dayElem);
-
-
-        if (isDayAvailable(currentYear, currentMonth, i)) { // here test
-            dayElem.classList.add('available');
-          } else {
-            dayElem.classList.add('unavailable');
-          }
-
-          daysContainer.appendChild(dayElem)
+    
+        const dayNumberElem = document.createElement('span');
+        dayNumberElem.classList.add('day-number');
+        dayNumberElem.textContent = i;
+    
+        dayElem.appendChild(dayNumberElem);
+    
+        if (!isDayAvailable(currentYear, currentMonth, i)) {
+          dayElem.classList.add('unavailable');
+          const unavailableTextElem = document.createElement('span');
+          unavailableTextElem.classList.add('unavailable-text');
+          unavailableTextElem.textContent = 'Unavailable';
+          dayElem.appendChild(unavailableTextElem);
+        }
+    
+        daysContainer.appendChild(dayElem);
       }
     }
 
