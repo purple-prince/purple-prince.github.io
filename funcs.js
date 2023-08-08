@@ -46,8 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function isDayAvailable(year, month, day) {
         const unavailableRanges = [
-            [new Date(2023, 5, 14), new Date(2023, 6, 31)], // June 14th - July 31st, 2023
-            [new Date(2023, 11, 4), new Date(2024, 2, 31)] // Dec 4th, 2023 - March 31st, 2024
+            [new Date(2023, 5, 14), new Date(2023, 6, 31)],
+            [new Date(2023, 11, 4), new Date(2024, 2, 31)],
+            [new Date(2023, 8, 1), new Date(2023, 9, 16)],
+            [new Date(2023, 11, 1), new Date(2024, 3, 31)],
           ];
 
           const currentDate = new Date(year, month, day);
